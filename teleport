@@ -1,0 +1,15 @@
+local teleportticket = 4
+local userprice = 5
+if userprice < teleportticket then
+-- the gate will stay closed.
+print("you are missing " .. teleportticket-userprice .. " dollars")
+rs.setOutput("left", false)
+ 
+-- gate will open to alow teleporteee
+   elseif userprice >= teleportticket then
+  rs.setOutput("left", true)
+  sleep(5)
+  rs.setOutput("left", false)
+  print("enjoy da ride")
+end
+
