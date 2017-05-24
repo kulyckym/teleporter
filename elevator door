@@ -1,0 +1,16 @@
+  local userprice = 2
+  local elevatorcost = 1
+ 
+--- these are the two variables of cost and money
+--- put in.
+ 
+if userprice < elevatorcost then
+print("you are missing" .. elevatorcost-userprice .. "dollars")
+rs. setOutput("left", false)
+ 
+elseif userprice >= elevatorcost then
+rs.setOutput("left", true)
+sleep(6)
+rs.setOutput("left", false)
+print("enjoy the ride")
+end
