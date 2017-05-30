@@ -10,6 +10,6 @@ rs.setOutput("left", false)
   rs.setOutput("left", true)
   sleep(5)
   rs.setOutput("left", false)
-  print("enjoy da ride")
+  print("enjoy the ride")
 end
 
