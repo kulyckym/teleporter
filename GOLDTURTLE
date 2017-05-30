@@ -1,0 +1,5 @@
+while true do
+ if rs.getInput("back", true) then
+ turtle.suck()
+ end      
+end
