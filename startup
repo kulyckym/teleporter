@@ -1,0 +1,16 @@
+m = peripheral.wrap("right")
+ 
+m.setTextScale(1)
+m.setCursorPos(1,1)
+m.write("Welcome")
+ 
+m.setCursorPos(1,2)
+m.write("To JOJO Port")
+ 
+ 
+m.setTextColor(512)
+m.setCursorPos(1,4)
+m.write("Type in:")
+ 
+m.setCursorPos(1,5)
+m.write("teleportv3")
