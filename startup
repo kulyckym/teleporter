@@ -1,3 +1,4 @@
+--Used to display messages on what to do when users want to teleport
 m = peripheral.wrap("right")
  
 m.setTextScale(1)
