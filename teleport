@@ -1,3 +1,4 @@
+--This code will be used as a money machine that when the players want to teleport, they pay and the doors open so that they go--
 local teleportticket = 4
 local userprice = 5
 if userprice < teleportticket then
@@ -5,7 +6,7 @@ if userprice < teleportticket then
 print("you are missing " .. teleportticket-userprice .. " dollars")
 rs.setOutput("left", false)
  
--- gate will open to alow teleporteee
+-- gate will open to alow teleportee
    elseif userprice >= teleportticket then
   rs.setOutput("left", true)
   sleep(5)
