@@ -1,4 +1,5 @@
-  for x = 1,13 do
+ --Turtle will remove snow near the airport to make the area nicer
+ for x = 1,13 do
   turtle.dig()
   turtle.forward()
   end
