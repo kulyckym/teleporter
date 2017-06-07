@@ -1,16 +1,24 @@
---This code will be used as a money machine that when the players want to teleport, they pay and the doors open so that they go--
+-- this program will accpet money in order to open the door to allow access to teleporter
+-- ticket value is 4 dollars
+-- The simulated value of money put in by user is 5
 local teleportticket = 4
 local userprice = 5
-if userprice < teleportticket then
+-- if userprice is less that the ticket value, the door will stay closed  
+  if userprice < teleportticket then
 -- the gate will stay closed.
-print("you are missing " .. teleportticket-userprice .. " dollars")
-rs.setOutput("left", false)
- 
--- gate will open to alow teleportee
-   elseif userprice >= teleportticket then
-  rs.setOutput("left", true)
-  sleep(5)
+  print("you are missing " .. teleportticket-userprice .. " dollars")
   rs.setOutput("left", false)
-  print("enjoy the ride")
+-- gate will open to alow teleporteee
+    elseif userprice = teleportticket then
+    rs.setOutput("left", true)
+    sleep(5)
+    rs.setOutput("left", false)
+    print("enjoy the ride")
+-- if the person puts a surplus of money, the computer
+-- will let them know their change.  
+      else userprice > teleportticket then
+      rs.setOutput("left", true)
+      sleep(5)
+      rs.setOutput("left", true)
+      print ("Your change is " .. userprice-teleportticket .. "dollars")  
 end
-
