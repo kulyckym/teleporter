@@ -1,3 +1,11 @@
-rs.setOutput("back", true)
-os.sleep(5)
-rs.setOutput("back", false)
+rednet.open("left")
+ 
+os.sleep(10)
+ 
+turtle.suck(4)
+ 
+local data = turtle.getItemDetail(1)
+ 
+rednet.broadcast(data ,"airport")
+ 
+rednet.close("left")
