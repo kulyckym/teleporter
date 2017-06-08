@@ -1,22 +1,40 @@
--- this program will accpet money in order to open the door to allow access to teleporter
--- ticket value is 4 dollars
--- The simulated value of money put in by user is 5
+rednet.open("bottom")
+print("Welcome to Jojo's World, The cost of a teleport ticket is 4 gold ingots which you can place in the hoppwer in front of you.")  
+ 
+local userprice = 0
+ 
 local teleportticket = 4
-local userprice = 5
--- if userprice is less that the ticket value, the door will stay closed  
-  if userprice < teleportticket then
+ 
+local id, blocks, proto = rednet.receive("airport")
+ 
+if blocks.name == "minecraft:gold_ingot" and blocks.count >= 4 then
+ 
+  print("you have payed the proper amount, please wait for furhter instructions.")
+  userprice = blocks.count
+elseif blocks.name == "minecraft:gold_ingot" then
+  print("You have payed less than the required amount")
+  userprice = blocks.count
+else
+  print("You didnt put the right currency in.")
+end
+ 
+os.sleep(1)
+ 
+ 
+ 
+if userprice < teleportticket then
 -- the gate will stay closed.
   print("you are missing " .. teleportticket-userprice .. " dollars")
   rs.setOutput("left", false)
 -- gate will open to alow teleporteee
-    elseif userprice = teleportticket then
+    elseif userprice == teleportticket then
     rs.setOutput("left", true)
     sleep(5)
     rs.setOutput("left", false)
     print("enjoy the ride")
 -- if the person puts a surplus of money, the computer
 -- will let them know their change.  
-      else userprice > teleportticket then
+      elseif userprice > teleportticket then
       rs.setOutput("left", true)
       sleep(5)
       rs.setOutput("left", true)
