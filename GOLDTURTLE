@@ -1,5 +1,15 @@
-while true do
- if rs.getInput("back", true) then
- turtle.suck()
- end      
+local indicator = 0
+
+while indicator<1 do 
+  
+ if rs.getInput("back") then
+     turtle.suck(4)
+    local data = turtle.getItemDetail(1)
+   if data.name == "minecraftedu:gold_ingot" and data.count >= 4
+     elseif data.name == "minecraftedu:gold_ingot"    
+     indicator = indicator + 1
+   end
+ end
+    
+os.sleep(1)
 end
